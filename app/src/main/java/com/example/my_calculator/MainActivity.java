@@ -208,18 +208,21 @@ public class MainActivity extends AppCompatActivity {
                 process = process.replaceAll("×","*");
                 process = process.replaceAll("%","/100");
 
-                Context rhino = Context.enter();
-                rhino.setOptimisatiionLevel(-1);
+                Context appcompat = Context.enter();
+                appcompat.setOptimisatiionLevel(-1);
 
                 String finalResult = "";
 
                 try{
-                    Scriptable scriptable = rhino.initstandardObjects()
+                    Scriptable scriptable = appcompat.initStandardObjects();
+                    finalResult = appcompat.evaluateString(regex,process)
                 }
-                catch()
+                catch(Exception e)
                 {
-
+                    finalResult="0";
                 }
+
+                tvOutput.setText(finalResult);
             }
         });
 
