@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
             }
             else
             {
-                process = tvInput.getText().toString();
+                process = tvInput.getText().toString();//changes
                 tvInput.setText(process + "(");
                 checkbracket = true;
             }
