@@ -207,15 +207,13 @@ public class MainActivity extends AppCompatActivity {
 
                 process = process.replaceAll("×","*");
                 process = process.replaceAll("%","/100");
+                process = process.replaceAll("÷","/");
 
-                Context appcompat = Context.enter();
-                appcompat.setOptimisatiionLevel(-1);
 
                 String finalResult = "";
 
                 try{
-                    Scriptable scriptable = appcompat.initStandardObjects();
-                    finalResult = appcompat.evaluateString(regex,process)
+
                 }
                 catch(Exception e)
                 {
